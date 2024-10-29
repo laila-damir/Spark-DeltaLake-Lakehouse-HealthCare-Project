@@ -1,0 +1,8 @@
+pyspark==3.5.0             # Spark framework for big data processing
+delta-spark==3.2.0         # Delta Lake integration with Spark
+pandas                     # Data manipulation and analysis
+bokeh                      # Interactive visualization for BI
+plotly                     # Additional visualization options 
+numpy                      # Numerical operations 
+sqlalchemy                 # SQL ORM for database connections 
+jupyterlab                 # Jupyter environment 
