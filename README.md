@@ -1,24 +1,27 @@
-
 # The Spark-Delta Lakehouse Project
 
-This project demonstrates the use of the **Spark ecosystem** to build a Business Intelligence (BI) solution for a big data environment, showcasing the effectiveness of Spark in handling large-scale data processing and analysis. It incorporates **Delta Lake** for data storage, **PySpark** for ETL processes, **MDX-like** queries using **Spark SQL** for BI analytics, and **Bokeh** for interactive data visualization.
+This project demonstrates the use of the **Spark ecosystem** to build a comprehensive Business Intelligence (BI) solution for a big data environment, showcasing Spark's capabilities in large-scale data processing, structured streaming, and interactive visualization. It incorporates **Delta Lake** for data storage, **PySpark** for ETL processes, **MDX-like queries** using **Spark's cube methods** for BI analytics, and interactive visualizations using **Bokeh** and **Plotly**.
 
 ## Project Steps
 
 1. **Defining Business Intelligence Structures**
-    - Creating Data Marts using Delta Lake storage.
-    - Building ETL Integration Services for populating Data Marts using PySpark.
-    - Testing Slowly Changing Dimension (SCD) capabilities.
+   - Creating Data Marts using Delta Lake storage.
+   - Building ETL Integration Services for populating Data Marts using PySpark.
+   - Testing Slowly Changing Dimension (SCD) capabilities to manage data history effectively.
 
 2. **Working with a Multidimensional BI Semantic Model**
-    - Modeling and building a BI cube (Measures and Dimensions) using Spark.
-    - Executing MDX-like queries with Spark SQL.
+   - Modeling and building a BI cube (Measures and Dimensions) using Spark's `.cube` methods for aggregating data across multiple dimensions.
+   - Performing multidimensional analyses by using `.cube` operations in PySpark for BI reporting and analytics.
 
-3. **Modeling and Visualizing with Bokeh**
-    - Connecting Spark data to Bokeh for interactive visualizations, enabling drill-down and roll-up features.
+3. **Structured Streaming**
+   - Utilizing Spark's structured streaming capabilities with a dataset of 10,000 rows to perform real-time data processing and updates, demonstrating Spark's flexibility with large data volumes.
 
-
-
+4. **Modeling and Visualizing with Bokeh and Plotly**
+   - Creating interactive visualizations for healthcare data analysis:
+     - **Bar Charts**: Displaying billing amounts segmented by year, gender, and medical condition.
+     - **Line Charts**: Representing monthly and quarterly trends in billing amounts over time.
+     - **3D Visualizations**: Visualizing `.cube` query results in a 3D space for an in-depth view.
+   - Both Bokeh and Plotly were used to enable drill-down, filtering, and other interactive features in visualizations.
 
 ## Requirements
 
@@ -53,17 +56,16 @@ pip install -r requirements.txt
 
    Inside `notebooks/Healthcare.ipynb`, run the cells to perform ETL operations, data cleansing, and transformation.
 
-4. **Run BI Queries:**
+4. **Run BI Cube Aggregations:**
 
-   Execute MDX-like queries stored in `queries.sql` using Spark SQL. You can either load them directly or run the example queries in the script files.
+   Use Spark's `.cube` methods within PySpark to perform multidimensional analyses, exploring measures across various dimension combinations.
 
-5. **Visualize with Bokeh:**
+5. **Visualize with Bokeh and Plotly:**
 
-   You can run the cells of `notebooks/Healthcare.ipynb` corresponding to visualization, to generate 3D visualizations for different MDX-like queries.
-
-
+   - Use `notebooks/Healthcare.ipynb` to generate visualizations for analysis. Run the cells for:
+     - **Bokeh visualizations**: 3D and interactive visuals for `.cube` query results.
+     - **Plotly visualizations**: Interactive bar and line charts for billing trends over time, with drill-down options for monthly and quarterly views.
 
 ## Project Overview
 
-This project demonstrates how to create a complete data pipeline and BI environment using Spark and Delta Lake, with a focus on scalability and interactive visualization. It's designed to handle large datasets, manage changing data dimensions, and deliver insights through accessible visualizations.
-
+This project demonstrates how to create a complete data pipeline and BI environment using Spark and Delta Lake, with a focus on scalability, real-time data handling, and interactive visualization. It's designed to handle large datasets, manage changing data dimensions, and deliver insights through accessible visualizations.
